@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registros</title>
     <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
 </head>
 <body>
     <a href="create.php"><input type="button" value="Adicionar membro"></a>
-    <form action="readById.php">
+    <form action="readById.php" method="get">
         <label for="pesquisa" method="post">Pesquisar:</label>
-        <input type="search" id="pesquisa" name="pesquisa">
-        <input type="submit" value="submit">
+        <input type="search" id="cpf" name="cpf">
+        <input type="submit" value="submit" style="
+    padding: 2px; ">
     </form>
     <table class="tabela">
         <thead>
@@ -44,7 +46,7 @@
             echo '<td>'.$row['contato'].'</td>';
             echo '<td>'.$row['nome_artista'].'</td>';
             echo '<td>'.$row['email'].'</td>';
-            echo '<td>'.$row['categoria'].'</td>';
+            echo '<td>'.utf8_encode($row['categoria']).'</td>';
             echo '<td>'.'<a href=readById.php?cpf='.$row['cpf'].'><input type="button" value="Ver"></a>'.'</td>';
             echo '</tr>';
         }

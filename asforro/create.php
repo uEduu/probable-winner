@@ -24,7 +24,7 @@
         <input type="date" name="data_nascimento" id="data_nascimento"><br>
         <label for="categoria">Categoria:</label><br>
         <select id="categoria" name="categoria" required>
-            <option value="Amante do forró">Amante do forró</option>
+            <option value="Amante do forro" selected>Amante do forró</option>
             <option value="Cantor">Cantor</option>
             <option value="Instrumentista">Instrumentista</option>
             <option value="Dançarino">Dançarino</option>

@@ -17,6 +17,10 @@
     $banda_trio=$_POST["banda_trio"];
     $data_nascimento=$_POST["data_nascimento"];
     mysqli_query($conn,"INSERT INTO `membro`(`nome`, `cpf`, `nome_artista`, `cnpj`, `instrumentos`, `rg`, `categoria`, `email`, `contato`,`endereco`,`banda_trio`,`data_nascimento`) VALUES('$nome', '$cpf', '$nome_artista', '$cnpj', '$instrumentos', '$rg', '$categoria', '$email', '$contato','$endereco','$banda_trio','$data_nascimento')");
+    echo '<script type="text/javascript">
+       alert("Cadastrado!");
+       location.href="index.php";
+    </script>';
     }
     if(isset($_POST['edit'])){
         $nome = $_POST["nome"];
@@ -32,11 +36,9 @@
         $banda_trio=$_POST["banda_trio"];
         $data_nascimento=$_POST["data_nascimento"];
         mysqli_query($conn,"UPDATE `membro` SET `nome`='$nome', `cpf`='$cpf', `nome_artista`='$nome_artista', `cnpj`='$cnpj', `instrumentos`='$instrumentos', `rg`='$rg', `categoria`='$categoria', `email`='$email', `contato`='$contato',`endereco`='$endereco',`banda_trio`='$banda_trio',`data_nascimento`='$data_nascimento' WHERE `cpf`='$cpf'");
-        }
+        echo '<script type="text/javascript">
+        alert("Registro atualizado!");
+        location.href="index.php";
+        </script>';
+    }
 ?>
-<html>
-    <script type="text/javascript">
-       alert("Cadastrado!");
-       location.href="index.php";
-    </script>
-</html>
